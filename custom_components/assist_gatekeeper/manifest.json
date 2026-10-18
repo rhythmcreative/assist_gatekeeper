@@ -1,0 +1,11 @@
+{
+  "domain": "assist_gatekeeper",
+  "name": "Assist Gatekeeper (Smart Pre-Flight Verifier)",
+  "codeowners": ["@rhythmcreative"],
+  "config_flow": true,
+  "documentation": "https://github.com/rhythmcreative/assist_gatekeeper",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/rhythmcreative/assist_gatekeeper/issues",
+  "requirements": ["aiohttp>=3.8.0"],
+  "version": "1.0.0"
+}

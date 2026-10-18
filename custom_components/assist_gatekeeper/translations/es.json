@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configuración de Assist Gatekeeper",
+        "description": "Configura el verificador inteligente previo para filtrar activaciones accidentales y diálogos de televisión antes de llamar al modelo grande.",
+        "data": {
+          "ollama_url": "URL de la API de Ollama",
+          "verifier_model": "Modelo verificador rápido (ej. gemma2:2b)",
+          "target_agent": "ID del agente de conversación principal",
+          "enable_heuristics": "Activar filtro heurístico rápido de ruidos/relleno",
+          "silent_discard": "Descarte silencioso (sin voz en falsos positivos)",
+          "verifier_prompt": "Prompt de clasificación"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Solo se permite una única instancia de Assist Gatekeeper."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones de Assist Gatekeeper",
+        "data": {
+          "ollama_url": "URL de la API de Ollama",
+          "verifier_model": "Modelo verificador rápido (ej. gemma2:2b)",
+          "target_agent": "ID del agente de conversación principal",
+          "enable_heuristics": "Activar filtro heurístico rápido de ruidos/relleno",
+          "silent_discard": "Descarte silencioso (sin voz en falsos positivos)",
+          "verifier_prompt": "Prompt de clasificación"
+        }
+      }
+    }
+  }
+}

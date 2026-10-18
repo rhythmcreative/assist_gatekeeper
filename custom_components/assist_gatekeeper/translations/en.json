@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Assist Gatekeeper Configuration",
+        "description": "Configure the smart pre-flight verifier to filter out accidental wake words and TV chatter before calling your heavy model.",
+        "data": {
+          "ollama_url": "Ollama API URL",
+          "verifier_model": "Fast Verifier Model (e.g. gemma2:2b)",
+          "target_agent": "Main Conversation Agent Entity ID",
+          "enable_heuristics": "Enable fast noise/garbage heuristic filter",
+          "silent_discard": "Silent discard (no speech on rejected turns)",
+          "verifier_prompt": "Classification Prompt"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Only a single instance of Assist Gatekeeper is allowed."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Assist Gatekeeper Options",
+        "data": {
+          "ollama_url": "Ollama API URL",
+          "verifier_model": "Fast Verifier Model (e.g. gemma2:2b)",
+          "target_agent": "Main Conversation Agent Entity ID",
+          "enable_heuristics": "Enable fast noise/garbage heuristic filter",
+          "silent_discard": "Silent discard (no speech on rejected turns)",
+          "verifier_prompt": "Classification Prompt"
+        }
+      }
+    }
+  }
+}
