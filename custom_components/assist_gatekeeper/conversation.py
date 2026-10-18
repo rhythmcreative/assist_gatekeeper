@@ -165,7 +165,10 @@ class AssistGatekeeperEntity(ConversationEntity, AbstractConversationAgent):
         """Call fast pre-flight verifier model to classify turn."""
         payload = {
             "model": model,
-            "prompt": f"{system_prompt}\nFrase: \"{text}\"\nRespuesta:",
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f'Frase: "{text}"'},
+            ],
             "stream": False,
             "options": {
                 "temperature": 0.0,
@@ -178,11 +181,13 @@ class AssistGatekeeperEntity(ConversationEntity, AbstractConversationAgent):
                 timeout=aiohttp.ClientTimeout(total=3.0)
             ) as session:
                 async with session.post(
-                    f"{ollama_url}/api/generate", json=payload
+                    f"{ollama_url}/api/chat", json=payload
                 ) as resp:
                     if resp.status == 200:
                         data = await resp.json()
-                        reply = (data.get("response") or "").strip().upper()
+                        reply = (
+                            data.get("message", {}).get("content") or ""
+                        ).strip().upper()
                         # If reply contains 'SI', it is a valid intentional command
                         return "SI" in reply
                     else:
